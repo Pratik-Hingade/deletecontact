@@ -1,0 +1,113 @@
+<template>
+    
+   
+    <div class="header">
+        <div class="slds-col slds-size_2-of-12">
+        <img  class="logo" src="http://www.shopncoupon.in/wp-content/uploads/2017/03/flipkart_logo.jpg" ></img>
+        </div>
+        <template if:true={showcartlogo}>
+            <div class="slds-col slds-size_2-of-12">
+                <img  class="homelogo" src="" >    </div>
+            <div class="slds-col slds-size_2-of-12">
+                <img  class="cartlogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04wbnI3PUAyqn_iWXEjFKkxEc9CQ8BcY8_Q&usqp=CAU" onclick={handleCart} >
+            </div>
+        </template>
+<template if:true={showhomelogo}>
+    <div class="slds-col slds-size_2-of-12">
+        <img  class="homelogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdCkqvY_iPTagmkPFOJpvyVN7KzMJUiXlOQ&usqp=CAU" alt="image loading" onclick={handleHideCart}>    </div>
+        <div class="slds-col slds-size_2-of-12">
+            <img  class="cartlogo" src="" >    </div>
+</template>
+        
+
+               
+          
+        <h1 style="background:#1000F7; padding:40px;text-align:center;"></h1>
+        
+    </div>
+    <div style="margin: -72px 350px 0px 350px;">
+        <lightning-input type='search'   placeholder="Search products.." value={serchProductValue}>
+        </lightning-input>
+
+    </div>
+     <!-- <lightning-button variant='brand' label='Cart' title='title' onclick={handleCart} class='cssClass'></lightning-button>  -->
+    
+    <!-- <c-latest-mobile-carousel></c-latest-mobile-carousel> -->
+    <div class="slds-m-around_medium">
+       
+        <template if:true={Myproducts}>
+            <!-- <Lightning-card title="Product's"> -->
+        <lightning-layout multiple-rows="true">
+            <template for:each={products.data} for:item="prd" for:index="index">
+                <lightning-layout-item key={prd.Id} size='12' medium-device-size="4" class="slds-var-p-around_x-small">
+                    <lightning-card title={prd.Name} class="product_cart">
+                        <div class="slds-p-horizontal_small">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_8-of-12 ">
+                        <img  class="forEachLoopImage" src={prd.Image__c} alt="product comming" 
+                       
+                                            data-name={prd.Name} data-prize={prd.Prize__c}
+                                            data-image={prd.Image__c} data-desc={prd.Description__c}>
+                            </div>
+                            <div class="slds-col slds-size_4-of-12">
+                               
+                                <p class="slds-var-m-bottom_xx-small"
+                                    >
+                                    <strong style="font-size:25px"> ₹ : {prd.Prize__c}</strong>
+                                           
+                                </p>
+  
+                            </div>
+
+                        </div>
+                    </div>
+
+                   
+                    <p slot="footer">
+                      
+                              <lightning-record-edit-form object-api-name={cartObject} fields={cartFields}>
+                                    <lightning-input-field class="slds-hidden" field-name='Product1__c' value={prd.Id} variant="label-hidden"> </lightning-input-field>
+                                    <lightning-input-field class="slds-hidden" field-name='FlipkartAccount__c' value='a1u5i0000001aoYAAQ' variant="label-hidden"> </lightning-input-field>
+                                  <lightning-button label="Add To Cart" type="submit" onclick={handleCartCreated}></lightning-button>
+                             </lightning-record-edit-form>
+                         
+                     </p>
+
+                    </lightning-card>
+                </lightning-layout-item>
+              </template>
+         </lightning-layout>
+        <!-- </Lightning-card> -->
+   </template>
+
+        </div>
+        <template  if:true={showcart}>
+<c-products-cart-management></c-products-cart-management>
+            <!-- <template for:each={cartProduct.data} for:item="prd">
+           
+                <p key={prd}>Cart No:- {prd.Name}</p> 
+                <h1  key={prd}> {prd.My_Products__c }</h1>
+                <p key={prd}>Prize:- {prd.Prize__c}</p> 
+            </template> -->
+        </template>
+        <template if:true={products.error}>
+            {products.error}
+        </template>
+    
+</template>
+        <!-- <template>
+           
+                <div class="slds-m-around_medium">
+                    <template if:true={products.data}>
+                        <template for:each={products.data} for:item="prd">
+                            <p key={prd.Id}>{prd.Name}</p>
+                           
+                        </template>
+                    </template>
+                    <template if:true={products.error}>
+                        {products.error}
+                    </template>
+                </div>
+           
+        </template> -->
+

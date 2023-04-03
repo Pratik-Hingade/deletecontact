@@ -1,0 +1,42 @@
+<template> 
+    <template if:true={showForm}>
+     <lightning-card title="Information For Building Portfolio">
+ 
+         <lightning-record-edit-form object-api-name="Portfolio__c" record-id={recordId} onsuccess={handleSave}>
+             <div class="slds-grid slds-gutters">
+                 <!-- <div class="slds-grid slds-grid_vertical"> -->
+                 <div class="slds-col">
+             <lightning-input-field field-name="Name"></lightning-input-field>
+             <lightning-input-field field-name="Location__c"></lightning-input-field>
+             <!-- <lightning-input-field field-name="Address__c"></lightning-input-field> -->
+             <lightning-input-field field-name="Education__c"></lightning-input-field>
+             
+         </div>
+         <div class="slds-col">
+             <lightning-input-field field-name="Phone__c"></lightning-input-field>
+             <lightning-input-field field-name="Badges__c"></lightning-input-field>
+             <lightning-input-field field-name="summary__c"></lightning-input-field>
+         </div>
+         <div class="slds-col">
+             <lightning-input-field field-name="Email__c"></lightning-input-field>
+             <lightning-input-field field-name="Trailhead_Points__c"></lightning-input-field>
+             <!-- <lightning-input-field field-name="Trailhead_Trails__c"></lightning-input-field> -->
+             <lightning-input-field field-name="Skills__c"></lightning-input-field>
+ 
+         </div>
+        
+     </div>
+     <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-center">
+         <div class="slds-col">
+             <lightning-button label="Submit" variant="brand" type="submit"></lightning-button>
+         </div>
+         <div class="slds-col"><div class="slds-p-left_medium">
+ 
+             <lightning-button label="Genarate Portfolio" variant="Success" onclick={handlePortfolio}></lightning-button>
+         </div>
+         </div>
+     </div> 
+         </lightning-record-edit-form>
+     </lightning-card>
+    </template>
+</template>

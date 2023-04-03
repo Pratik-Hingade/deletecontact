@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Conditional - Rendaring">
+        <template if:true={hideText}>
+        <lightning-button label="Show Text" variant="Brand" onclick={handleShow}></lightning-button>
+    </template>
+        <template if:true={showText}>
+    <p>Welcome To LWC Learning</p>
+    <lightning-button label="Hide Text" variant="Brand" onclick={handleHide}></lightning-button>
+</template>
+    </lightning-card>
+</template>

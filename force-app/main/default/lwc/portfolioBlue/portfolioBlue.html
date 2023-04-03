@@ -1,0 +1,57 @@
+<template>
+    <!-- <template if:true={showPortfolioInBlueColor}> -->
+        <lightning-card title="My Portfolio">
+        <lightning-button label="Back"   variant="brand" onclick={handleBack}></lightning-button>
+        <div class="banner">
+            <!-- <lightning-record-view-form
+                record-id={recordId}
+         object-api-name={objectApiName}>
+         <lightning-output-field field-name="Name__c"></lightning-output-field>
+         <lightning-output-field field-name="Designation__c"></lightning-output-field>
+         <lightning-output-field field-name="Location__c"></lightning-output-field>
+         
+        </lightning-record-view-form> -->
+        <img src={userLogourl} class="user-Logo"/>
+        <lightning-record-view-form
+        record-id={recordId1}
+        object-api-name='Portfolio__c'>    
+        
+    <lightning-output-field field-name="Name" variant="label-hidden" class="name"></lightning-output-field > 
+
+    <lightning-output-field field-name="Designation__c" variant="label-hidden"></lightning-output-field> 
+    <lightning-output-field field-name="Company__c" variant="label-hidden"></lightning-output-field>
+    <lightning-output-field field-name="Location__c" variant="label-hidden"></lightning-output-field>
+
+       </lightning-record-view-form>
+        <!-- <div class="name">Pratik Hingade</div>
+        <div class="designation">Junior Consaltant</div>
+        <div class="location">Bavdhan, Pune</div> -->
+
+
+        <div>
+            <a href="https://www.linkedin.com/in/pratik-hingade-554b95216/" target="_blank">
+            <img src={linkedinLogourl} class="Linkedin"/>
+           
+           
+        </a>
+        
+            <a href="https://trailblazer.me/id/pratikh" target="_blank">
+            <img src={trailheadLogourl} class="Trailhead"/>
+           
+        </a>
+        </div>
+
+    </div>
+        <c-portfolio-user-details
+        record-id={recordId1}
+        object-api-name='Portfolio__c'
+        ></c-portfolio-user-details>
+
+        <c-portfolio-tab-set
+        record-id={recordId1}
+           object-api-name='Portfolio__c'
+        ></c-portfolio-tab-set>
+       
+    </lightning-card>
+    <!-- </template> -->
+</template>

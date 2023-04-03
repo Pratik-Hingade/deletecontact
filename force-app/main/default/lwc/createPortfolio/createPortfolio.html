@@ -1,0 +1,10 @@
+<template>
+    <template if:true={portfolioButton}>
+        <lightning-card title="Create Your Portfolio Free"></lightning-card>
+        <lightning-button variant='brand' label='Create  Portfolio' title='Create Your Portfolio Free' onclick={handleOnClick} >
+        </lightning-button>
+    </template>
+    <template if:true={portfolio}>
+        <c-portfolio-home-page></c-portfolio-home-page>
+    </template>
+</template>

@@ -1,0 +1,38 @@
+<template>
+    <lightning-record-view-form record-id={recordId} object-api-name={objectApiName} density="comfy">
+        <lightning-layout multiple-rows>
+<!--             
+            <lightning-layout-item size="12" small-device-size="4" medium-device-size="3">
+              
+                <img src={trailheadRankImg} alt="trailhead Badge" />
+            </lightning-layout-item> -->
+
+            <lightning-layout-item size="12" small-device-size="4" medium-device-size="3">
+                <lightning-output-field field-name="Trailhead_Trails__c"></lightning-output-field>
+            </lightning-layout-item>
+            
+            <lightning-layout-item size="12" small-device-size="4" medium-device-size="3">
+                <lightning-output-field field-name="Badges__c"></lightning-output-field>
+            </lightning-layout-item>
+            
+            <lightning-layout-item  size="12" small-device-size="4" medium-device-size="3">
+                <lightning-output-field field-name="Trailhead_Points__c"></lightning-output-field>
+            </lightning-layout-item>
+             
+            <lightning-layout-item  size="12" small-device-size="4" medium-device-size="3">
+                <!-- <div class="name">
+                    <p>
+                        VisualForce
+                    </p>
+                    <lightning-progress-bar value=70 size="large" variant="circular"></lightning-progress-bar> 
+                    <p><br/>
+                       Lightning Web Component
+                    </p>
+                    <lightning-progress-bar value=40 size="large" variant="circular"></lightning-progress-bar> 
+                        </div> -->
+            </lightning-layout-item>
+        
+        </lightning-layout>
+
+    </lightning-record-view-form>
+</template>

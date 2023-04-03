@@ -1,0 +1,89 @@
+.container{
+    /* background-color: aliceblue; */
+    background-image: url('https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2022/04/web-developer-portfolio.webp');
+    margin: -44px -71px 0px -68px;
+}
+.step{
+    margin: 0px -71px 0px -68px;
+}
+.button{
+    margin:0px 0px 0px 650px;
+}
+.footer{
+    margin: 0px -71px -25px -68px; 
+}
+.h1{
+    display:inline;
+    float:left;
+/* <p style="margin: 0; display: inline;" text-align="right">My first paragraph.</p> */
+}
+.h2{
+    display:inline;
+float:right;
+
+/* <p style="margin: 0; display: inline;" text-align="right">My first paragraph.</p> */
+}
+.user-Logo{
+    border-radius: 50%;
+    height: 140px;
+    width: 153px; 
+    height: 160px;
+    width: 160px;
+}
+.banner{
+    background: #f6c403;
+ 
+
+    /* background: lightblue; */
+
+    min-height: 300px;
+    text-align: center;
+    padding:32px 16px;
+}
+.skills{
+    text-align:right;
+    font-size: 45px;
+    font-weight: bolder;
+    padding:20px 16px;
+}
+.banner1{
+    /* background: #f6c403; */
+    background: lightblue;
+
+    min-height: 300px;
+    text-align: center;
+    padding:32px 16px;
+}
+.tabset{
+    background:lightblue;
+    background:lightblue;
+}
+.inputfield{
+    border: 2px solid red;
+  border-radius: 4px;
+}
+.name{
+    
+    font-size: 30px;
+    font-weight: bolder;
+       
+
+}
+
+/*
+.location  {
+    font-size: x-large;
+}
+.designation {
+    font-size: x-large;
+}*/
+.Linkedin{
+    height: 40px;
+    width: 40px;
+    margin: 16px 16px 0px 0px;
+}
+.Trailhead{
+    height: 40px;
+    width: 40px;
+    margin: 16px 16px 0px 0px;
+}

@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Beauty of Pune">
+     
+  <lightning-carousel>
+  
+        <template if:true={location}>
+          <template for:each={location} for:item="place">
+            <lightning-carousel-image 
+             key={place.id}
+             src={place.src}
+             href={place.href}
+             header={place.header}
+             height='100px'
+             width='50px'
+             description={place.description}>
+             <lightning-button label="See More Photos1" variant="Brand"></lightning-button>
+           </lightning-carousel-image>
+           
+        </template>  
+        <lightning-button label="See More Photos2" variant="Brand"></lightning-button>
+    </template><lightning-button label="See More Photos3" variant="Brand"></lightning-button>
+</lightning-carousel><lightning-button label="See More Photos4" variant="Brand"></lightning-button>
+
+  
+    <c-google-map></c-google-map>
+  
+    </lightning-card>  
+  </template>

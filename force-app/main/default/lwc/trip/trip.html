@@ -1,0 +1,89 @@
+<template>
+    <div class="slds-p-around_xx-large">
+    <lightning-card title="A few Best Locations,To you must visit">
+
+        <div class="slds-p-horizontal_xx-large">
+            <h1 class="">Please Select your city</h1>
+        </div>
+        <br />
+        <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-center">
+            <div class="slds-col">
+                <lightning-button label="Pune" variant="success" onclick={handlerPune}
+                    ondblclick={handlerHide}></lightning-button>
+            </div>
+            <div class="slds-col">
+                <lightning-button label="Mumbai" variant="success" onclick={handlerMumbai}
+                    ondblclick={handlerHide}></lightning-button>
+            </div>
+
+            <div class="slds-col">
+                <!-- <lightning-button  label="Others" onclick={handlerOther} ondblclick={handlerHide}></lightning-button> -->
+                <lightning-icon icon-name="utility:search" alternative-text="Utility image" title="Search"
+                    onclick={handlerOther} ondblclick={handlerHide}></lightning-icon>
+            </div>
+        </div>
+        <template if:true={showMorePlace}>
+            <br />
+            <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-center">
+                <div class="slds-col">
+                    <lightning-button label="Kochi" variant="success" onclick={handlerKochi}
+                        ondblclick={handlerHide}></lightning-button>
+                </div>
+                <div class="slds-col">
+                    <lightning-button label="Bengaluru" variant="success" ondblclick={handlerHide}></lightning-button>
+                </div>
+                <div class="slds-col">
+                    <lightning-button label="Hyderabad" variant="success" ondblclick={handlerHide}></lightning-button>
+                </div>
+            </div>
+            <br />
+            <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-center">
+                <div class="slds-col">
+                    <lightning-button label="Chennai" variant="success" ondblclick={handlerHide}></lightning-button>
+                </div>
+                <div class="slds-col">
+                    <lightning-button label="New Delhi" variant="success" ondblclick={handlerHide}></lightning-button>
+                </div>
+                <div class="slds-col">
+                    <lightning-button label="Kolkata" variant="success" ondblclick={handlerHide}></lightning-button>
+                </div>
+            </div>
+            <br />
+            <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-center">
+                <div class="slds-col">
+                    <lightning-button label="Lucknow"   variant="success" ondblclick={handlerHide}></lightning-button>
+                </div>
+                <div class="slds-col">
+                    <lightning-button label="Jaipur"    variant="success" ondblclick={handlerHide}></lightning-button>
+                </div>
+                <div class="slds-col">
+                    <lightning-button label="Ahmedabad" variant="success" ondblclick={handlerHide}></lightning-button>
+                </div>
+            </div>
+            <br />
+            <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-center">
+                <div class="slds-col">
+                    <lightning-button label="Lucknow"  variant="success" ondblclick={handlerHide}></lightning-button>
+                </div>
+                <div class="slds-col">
+                    <lightning-button label="Indore"   variant="success" ondblclick={handlerHide}></lightning-button>
+                </div>
+                <div class="slds-col">
+                    <lightning-button label="Amritsar" variant="success" ondblclick={handlerHide}></lightning-button>
+                </div>
+            </div>
+        </template>
+
+        <template if:true={showPunePlace}>
+            <c-pune></c-pune>
+        </template>
+        <template if:true={showMumbaiPlace}>
+            <c-mumbai></c-mumbai>
+        </template>
+        <template if:true={showKochiPlace}>
+            <c-kochi></c-kochi>
+        </template>
+
+    </lightning-card>
+    </div>
+</template>

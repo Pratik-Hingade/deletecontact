@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="For Each Loop">
+      
+        <template for:each={CarList} for:item="cars">
+            
+           <ul key={car} class="slds-has-dividers_around-space"> 
+            <li class="slds-item">{cars}</li>
+        </ul>
+        
+        </template>
+        
+    </lightning-card>
+</template>

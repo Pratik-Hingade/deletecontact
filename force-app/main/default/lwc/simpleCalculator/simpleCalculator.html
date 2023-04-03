@@ -1,0 +1,22 @@
+<template >
+    
+    <lightning-card title=" Calculator" icon-name="standard:apps" >
+        <div style="background-color: pink;">
+        <lightning-input type="number" label="First Number" placeholder="enter your first No" value={firstNo} class="slds-p-horizontal_xx-large" onchange={numberChangeHandler1}></lightning-input>
+        <lightning-input type="number" label="Second Number"  placeholder="enter your Second No" value={secondNo} class="slds-p-horizontal_xx-large" onchange={numberChangeHandler2}></lightning-input>
+        <br/>
+   
+        
+        <b class="slds-p-horizontal_xx-large" style="color: aqua; background:black">Result:-{results} </b>  
+        <br/><br/>
+        <lightning-button-group>
+            <lightning-button label="Add" variant="brand" icon-name="utility:add" class="slds-m-left_xx-large" onclick={addHandler} ></lightning-button>
+            <lightning-button  label="Sub" variant="destructive-text" icon-name="utility:dash" class="slds-m-left_x-small" onclick={subHandler}></lightning-button>
+            <lightning-button label="Multi" variant="success" icon-name="utility:close"  class="slds-m-left_x-small" onclick={multiHandler}></lightning-button>
+            <lightning-button label="Div" variant="destructive" icon-name="utility:percent" class="slds-m-left_x-small" onclick={divHandler}></lightning-button>
+        </lightning-button-group>
+        <br/><br/><br/>
+    </div>  
+    </lightning-card>
+
+</template>

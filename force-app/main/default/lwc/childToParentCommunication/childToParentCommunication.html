@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Child - Parent Communication">
+<lightning-button label="Show Child" onclick={clickHandler}></lightning-button>
+        <template if:true={showHandler}>
+          <c-child-to-parent-model-component
+          onclose={hideModel}></c-child-to-parent-model-component>
+        </template>
+    </lightning-card>
+</template>

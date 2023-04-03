@@ -1,0 +1,15 @@
+<template>
+ <lightning-card title="Calculator - (LWC)">
+<lightning-input type='number' label='First No' value={fNo} onchange={handleOnChange1}></lightning-input>
+<lightning-input type='number' label='Second No' value={sNo} onchange={handleOnChange2}></lightning-input><br/>
+<B>Result:-{Total}</B><br/><br/>
+<lightning-button variant='brand' label='Add' title='addition' onclick={handleOnAdd} class='cssClass'></lightning-button>
+<lightning-button  label='Sub' title='substraction' onclick={handleOnSub} class='cssClass'></lightning-button>
+<lightning-button variant='brand' label='Div' title='Division' onclick={handleOnDiv} class='cssClass'></lightning-button>
+<lightning-button  label='Multi' title='Multiplication' onclick={handleOnMulti} class='cssClass'></lightning-button>
+<br/>
+
+
+
+</lightning-card>   
+</template>

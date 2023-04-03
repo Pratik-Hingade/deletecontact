@@ -1,0 +1,11 @@
+<template>
+   
+    <template if:true={showdiv}>
+    <div ><lightning-button label="submit" variant="brand" name="save" ></lightning-button> </div>
+ </template>
+ <template if:false={showdiv}>
+    <div > <lightning-button label="submit1" variant="brand" name="save" disabled="ture"></lightning-button></div>
+ </template>
+ <lightning-input type="Checkbox" label="Show My Button" value={showdiv} onclick={displayDiv}></lightning-input>
+ 
+</template>

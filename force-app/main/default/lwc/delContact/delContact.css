@@ -1,0 +1,22 @@
+.body, html { 
+    height: 100%; 
+    margin: 0; 
+} 
+.bg { 
+/* The image used */ background-image: url("https://images.unsplash.com/photo-1519750783826-e2420f4d687f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJldHR5JTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&w=1000&q=80"); 
+height: 400px; 
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: cover; 
+}
+.bodys, html { 
+    height: 100%; 
+    margin: 0; 
+} 
+.bgs { 
+/* The image used */ background-image: url("https://images.unsplash.com/photo-1519750783826-e2420f4d687f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJldHR5JTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&w=1000&q=80"); 
+height: 400px; 
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: cover; 
+}

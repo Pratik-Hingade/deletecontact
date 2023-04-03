@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Beauty of Kochi">
+  <lightning-carousel>
+  
+        <template if:true={location}>
+          <template for:each={location} for:item="place">
+            <lightning-carousel-image 
+             key={place.id}
+             src={place.src}
+             href={place.href}
+             header={place.header}
+             description={place.description}>
+  
+            </lightning-carousel-image>
+          </template>  
+      </template>
+  </lightning-carousel>
+    </lightning-card>  
+  </template>

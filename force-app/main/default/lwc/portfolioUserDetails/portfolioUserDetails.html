@@ -1,0 +1,20 @@
+<template>
+    <div class="userDetails">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" >
+                <div ><c-portfolio-user-details-view-form 
+                    admin={adminRating}
+                    devlopment={devlopmentRating}
+                    record-id={recordId}
+                    object-api-name={objectApiName}>
+                </c-portfolio-user-details-view-form></div>
+            </lightning-layout-item>
+           
+            <lightning-layout-item size="12" >
+                <c-portfolio-user-stats 
+                record-id={recordId}
+           object-api-name={objectApiName}></c-portfolio-user-stats>  
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

@@ -1,0 +1,41 @@
+<template>
+    <lightning-tabset variant="scoped" class="tabset">
+      <lightning-tab label="Summary" >
+            <c-portfolio-summary
+            record-id={recordId}
+            object-api-name={objectApiName}>
+            </c-portfolio-summary>
+        </lightning-tab>
+
+        <lightning-tab label="Work-Experience">
+           <c-portfolio-work-exp
+           record-id={recordId}
+           object-api-name={objectApiName}
+           ></c-portfolio-work-exp>
+        </lightning-tab>
+
+        <lightning-tab label="Skills">
+            <c-portfolio-skill
+            record-id={recordId}
+           object-api-name={objectApiName}>
+            </c-portfolio-skill>
+        </lightning-tab>
+
+        <lightning-tab label="Education">
+            <c-portfolio-education
+            record-id={recordId}
+            object-api-name={objectApiName}>
+        </c-portfolio-education>
+        </lightning-tab>
+
+        <lightning-tab label="Certification">
+            <c-portfolio-certification
+            record-id={recordId}
+            object-api-name={objectApiName}>
+        </c-portfolio-certification>
+        </lightning-tab>
+        <!-- <lightning-tab label="Others">
+            thers Content !
+        </lightning-tab> -->
+    </lightning-tabset>
+</template>

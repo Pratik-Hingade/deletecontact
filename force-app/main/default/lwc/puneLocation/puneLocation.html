@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Beauty of Pune">
+        <br/>
+        <h1>You want your location latitude&longitude</h1>
+        <br/>
+        <lightning-input-location if:true={showLocation}
+        label="Shaniwarwada"
+        latitude="18.5195"
+        longitude="73.8553"
+    ></lightning-input-location>
+    
+    <lightning-button label="Click me" onclick={handleLocation} ondblclick={handleHide}></lightning-button>
+    <br/>
+  <lightning-carousel>
+ 
+    <template if:true={location}>
+          <template for:each={location} for:item="place">
+            <lightning-carousel-image 
+             key={place.id}
+             src={place.src}
+             href={place.href}
+             header={place.header}
+             description={place.description}>
+  
+            </lightning-carousel-image>
+          </template>  
+      </template>
+  </lightning-carousel>
+    </lightning-card>  
+  </template>

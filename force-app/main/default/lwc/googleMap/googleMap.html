@@ -1,0 +1,9 @@
+<template>
+    <div class="slds-align_absolute-center" style="height:5rem">
+    <lightning-button brand="success" label="See Your Location On google map" onclick={handleMapShow} ondblclick={handleMapHide}></lightning-button>
+</div>
+    <template if:true={showMap}>
+    <lightning-map map-markers={mapMarkers}
+    show-footer> </lightning-map>
+</template>
+</template>

@@ -1,0 +1,10 @@
+<template>
+   <lightning-card  title="Parent LWC">
+   <b><p class="slds-text-align_center"> Result: {results} </p> </b> 
+   
+   <c-child-lwc onadd={handleIncrement}
+                onsub={handleDecrement}
+   ></c-child-lwc>
+   </lightning-card>
+
+</template>

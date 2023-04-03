@@ -1,0 +1,75 @@
+<template>
+    <template if:true={handleAccountCreate}>
+    <lightning-card title="Create Account (Lwc)">
+        <lightning-record-edit-form object-api-name={accObject}  onsuccess={handlesave} onsubmit={showContactForm} >
+            <!-- <lightning-input-field field-name='Id' value={accountId}></lightning-input-field> -->
+            <lightning-input-field field-name={accName}></lightning-input-field>
+            <lightning-input-field field-name={accPhone}></lightning-input-field>
+            <lightning-input-field field-name={accWebsite}></lightning-input-field>
+             <lightning-button label="Save" name="Save" type="submit" variant="brand"></lightning-button>
+       </lightning-record-edit-form>
+    </lightning-card>
+</template>
+
+
+    <template if:true={handleContactCreate}>    
+        <lightning-card title="Contact">
+        <lightning-record-edit-form object-api-name={conObject}  onsuccess={handlesave1} onsubmit={showOpportunityForm}>
+            <lightning-input-field field-name='AccountId' value={accountId}></lightning-input-field>
+            <!-- <lightning-input-field field-name='Id' value={contactId}></lightning-input-field> -->
+            <lightning-input-field field-name={conName}></lightning-input-field>
+            <lightning-input-field field-name={conEmail}></lightning-input-field>
+          <!-- <lightning-button label="Save" name="Save" type="submit" variant="brand"></lightning-button> -->
+           <lightning-button label="Save" name="Save" type="submit" variant="brand"></lightning-button>
+       </lightning-record-edit-form>
+    </lightning-card>  
+    </template>
+
+    <template if:true={handleOpportunityCreate}>
+        <lightning-card title="Opportunity">
+        <!-- <lightning-record-edit-form object-api-name={OppObject}  onsuccess={handlesave2} onsubmit={showRecordsInfo}> -->
+            <lightning-record-edit-form object-api-name={OppObject}   onsuccess={handlesave2} >
+            
+            <lightning-input-field field-name='AccountId' value={accountId}></lightning-input-field>
+            <!-- <lightning-input-field field-name='Id' value={oppId}></lightning-input-field> -->
+            <lightning-input-field field-name={oppName}></lightning-input-field>
+            <lightning-input-field field-name={oppStage}></lightning-input-field>
+            <lightning-input-field field-name={oppCloseDate}></lightning-input-field>
+            <lightning-button-group>
+              <lightning-button label="Save" name="Save" type="submit" variant="brand" class="slds-m-left_xx-large" ></lightning-button>
+              <lightning-button label="Record Overview" variant="brand-outline" class="slds-m-left_x-small" onclick={showRecordsInfo}></lightning-button>
+            </lightning-button-group>
+       </lightning-record-edit-form>
+    </lightning-card>
+    </template> 
+
+
+
+    <template if:true={handleInfo}>   
+        <lightning-card title="Account Info">
+            
+            <lightning-record-form record-id={accountId} object-api-name={accObject}
+                    fields={fields}  mode="view" >
+                </lightning-record-form> 
+            </lightning-card>
+        <br/>
+        
+            <div class="slds-box slds-theme_shade">  
+              <lightning-button label="Navigate On Account" onclick={navigateToRecordPage}> </lightning-button>  
+            </div>  
+        <br/>
+        <br/>
+        <lightning-card title="Contact Info">                                                
+            <lightning-record-form record-id={contactId} object-api-name={conObject}
+            fields={fields1}  mode="view" >
+        </lightning-record-form> 
+        </lightning-card>
+        <br/><br/>
+        <lightning-card title="Opportunity Info">                                                
+            <lightning-record-form record-id={oppId} object-api-name={OppObject}
+            fields={fields2}  mode="view" >
+        </lightning-record-form> 
+            </lightning-card>
+        </template>
+            
+</template>

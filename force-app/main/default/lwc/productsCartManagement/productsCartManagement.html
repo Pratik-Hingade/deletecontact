@@ -1,0 +1,51 @@
+<template >
+    <div class="slds-m-around_medium">
+        <lightning-record-edit-form
+        record-id="a1u5i0000001aoYAAQ"
+        object-api-name="FlipkartAccount__c"
+    >
+   <!-- <b><p style='font-size:50px;margin-left: 584px;'>My Cart List</p> </b> 
+    Total Cart Prize -->
+            <lightning-output-field style='font-size:35px' field-name="Total_Cart_Prize__c">
+
+            </lightning-output-field>
+       
+        <!-- <lightning-input-field field-name="Name"> </lightning-input-field> -->
+        
+       
+    </lightning-record-edit-form>
+    
+    <template if:true={cartProduct.data}>
+       
+    <lightning-layout multiple-rows="true">
+        <template for:each={cartProduct.data} for:item="crt" for:index="index">
+            <lightning-layout-item key={crt.Id} size='12' medium-device-size="4" class="slds-var-p-around_x-small">
+                <lightning-card title={crt.My_Products__c} class="product_cart">
+                    <div class="slds-p-horizontal_small">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_8-of-12 ">
+                    <img  class="forEachLoopImage" src={crt.Image__c} alt="product comming"                    
+                                        data-name={crt.Name} data-prize={crt.Prize__c}
+                                        data-image={crt.Image__c} data-desc={crt.Description__c}>
+                        </div>
+                        <div class="slds-col slds-size_4-of-12">                          
+                            <p class="slds-var-m-bottom_xx-small"                              >
+                                <strong style="font-size:25px"> ₹ : {crt.Prize__c}</strong>                                      
+                            </p>
+                        </div>
+                    </div>
+                </div>          
+                  <!-- <p slot="footer">                 
+                          <lightning-record-edit-form object-api-name={cartObject} fields={cartFields}>
+                                <lightning-input-field class="slds-hidden" field-name='Product1__c' value={prd.Id} variant="label-hidden"> </lightning-input-field>
+                              <lightning-button label="Add To Cart" type="submit" onclick={handleCartCreated}></lightning-button>
+                         </lightning-record-edit-form>                    
+                 </p>  -->
+                </lightning-card>
+            </lightning-layout-item>
+          </template>
+     </lightning-layout>
+</template>
+
+</div>
+</template>

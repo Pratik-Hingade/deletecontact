@@ -1,0 +1,282 @@
+<template>
+
+    <div class="slds-brand-band slds-brand-band_small"></div>
+    <template if:true={showForm}>
+        <!-- <div class="slds-align_absolute-center slds-box slds-box_xx-small slds-box slds-theme_shade slds-theme_alert-texture" style="height:5rem"> <b>"Information For Building Portfolio"</b></div> -->
+        <!-- <b><h1>"Information For Building Portfolio"</h1></b>  <br/><br/> -->
+       
+          <div class="form">
+        <div  class=" slds-align_absolute-center slds-box slds-box_xx-small
+            slds-box slds-theme_shade slds-theme_alert-texture"
+            style="height:5rem;font-size:40px;background:powderblue">
+           
+            <b
+                style="color: red;text-shadow: 2px 2px 4px #000000;">  Information
+                For Building Portfolio !!</b></div>
+            
+        <lightning-card style="background:powderblue">
+
+            <!-- <h1>"Information For Building Portfolio"</h1><br/><br/> -->
+            <!-- <lightning-card title="Information for Building Portfolio"> -->
+            <lightning-record-edit-form object-api-name="Portfolio__c"
+                record-id={recordId} onsuccess={handleSave}>
+                <!-- <div class="slds-grid slds-wrap"> -->
+                <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+
+
+                            <lightning-input-field field-name="Name"></lightning-input-field>
+                            <lightning-input-field field-name="Phone__c"></lightning-input-field>
+                            <lightning-input-field field-name="Email__c"></lightning-input-field>
+                            <lightning-input-field field-name="Designation__c"></lightning-input-field>
+                            <lightning-input-field field-name="Company__c"></lightning-input-field>
+                            <lightning-input-field field-name="Location__c"></lightning-input-field>
+                            <!-- </div> -->
+                            <!-- </div> -->
+                            <!-- <div class="slds-col"> -->
+                            <!-- <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12"> -->
+                            <!-- <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12"> -->
+                            <lightning-input-field field-name="Badges__c"></lightning-input-field>
+                            <lightning-input-field
+                                field-name="Trailhead_Trails__c"></lightning-input-field>
+                            <lightning-input-field
+                                field-name="Trailhead_Points__c"></lightning-input-field>
+                            <lightning-input-field
+                                field-name="Salesforce_Admin__c"
+                                onchange={adminRating}></lightning-input-field>
+                            <lightning-input-field
+                                field-name="Salesforce_Devlopment__c"
+                                onchange={devlopmentRating}>
+                            </lightning-input-field>
+                            <!-- </div> -->
+                            <!-- </div> -->
+                            <!-- <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12"> -->
+                            <!-- <div class="slds-col"> -->
+                            <lightning-input-field field-name="summary__c"></lightning-input-field>
+                            <lightning-input-field field-name="Skills__c"></lightning-input-field>
+                            <lightning-input-field field-name="Education__c"></lightning-input-field>
+                            <lightning-input-field
+                                field-name="Work_experience__c"></lightning-input-field>
+                            <lightning-input-field
+                                field-name="Certification__c"></lightning-input-field>
+                            <!-- </div> -->
+                            <!-- </div> -->
+
+                        </div></div>
+
+                    <!-- </div> -->
+
+                    <!-- <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-center"> -->
+                    <div class="slds-col slds-size_1-of-1
+                        slds-large-size_8-of-12">
+                        <!--                         
+                                                        <div class="slds-col">
+                                                            <div class="slds-p-left_medium">
+                                                                <lightning-button label="Submit" variant="brand" type="submit" onclick={handleSave}></lightning-button>
+                                                            </div> </div> <br/>
+                                                            <div class="slds-col"><div class="slds-p-left_medium">
+                                                                
+                                                                <lightning-button label="Genarate Portfolio" variant="Success" onclick={handlePortfolio}></lightning-button></div>
+                                                            </div><br/>
+                                                            <div class="slds-col"><div class="slds-p-left_medium">
+                                                                <lightning-button label="Click here to see demo Portfolio"  onclick={handlePortfolioDemo}></lightning-button> -->
+                    </div><br/>
+
+                        <div class="demo-BUTTON">
+                            <div class="slds-button-group slds-p-left_xx-large"
+                                role="group">
+                                <template if:true={hideSubmit}>
+                                    <button class="slds-button
+                                    slds-button_inverse slds-button
+                                    slds-button_success "
+                                    type="submit" >Submit</button>
+                                </template>
+                                    <template if:true={showbutton}>
+                                        <button class="slds-button slds-button_brand "
+                                        onclick={handlePortfolio} >Genarate portfolio</button>
+                                    </template>
+                                <!-- <button class="slds-button slds-button_inverse
+                                    slds-button slds-button_success"
+                                    onclick={handlePortfolioDemo}>Click here to
+                                    see demo Portfolio</button> -->
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="slds-col"><div class="slds-p-left_medium">
+                                                                <lightning-button variant='Success' label="Click here to see demo Portfolio in yellow color" onclick={handlePortfolio1}>
+                                                                </lightning-button>
+                                                            </div>
+                                                        </div> -->
+                        <!-- </div>
+                                                        </div>  -->
+                    </div>
+                </lightning-record-edit-form>
+
+                <!-- </lightning-card> -->
+
+            </lightning-card>
+          </div>
+        </template>
+        <template if:true={showPortfolio}>
+            
+            <div class="banner">
+                <!-- <lightning-record-view-form
+                record-id={recordId}
+         object-api-name={objectApiName}>
+         <lightning-output-field field-name="Name__c"></lightning-output-field>
+         <lightning-output-field field-name="Designation__c"></lightning-output-field>
+         <lightning-output-field field-name="Location__c"></lightning-output-field>
+         
+        </lightning-record-view-form> -->
+                <img src={userLogourl} class="user-Logo"/>
+                <lightning-record-view-form
+                    record-id={recordId1}
+                    object-api-name='Portfolio__c'>
+                    <div class="name">
+                        <lightning-output-field field-name="Name" 
+                            variant="label-hidden"></lightning-output-field>
+                    </div>
+                    <lightning-output-field field-name="Designation__c" 
+                        variant="label-hidden"></lightning-output-field>
+                    <lightning-output-field field-name="Company__c"
+                        variant="label-hidden"></lightning-output-field>
+                    <lightning-output-field field-name="Location__c"
+                        variant="label-hidden"></lightning-output-field>
+                </lightning-record-view-form>
+                <!-- <div class="name">Pratik Hingade</div>
+        <div class="designation">Junior Consaltant</div>
+        <div class="location">Bavdhan, Pune</div> -->
+                <div>
+                    <a
+                        href="https://www.linkedin.com/in/pratik-hingade-554b95216/"
+                        target="_blank">
+                        <img src={linkedinLogourl} class="Linkedin"/>
+
+
+                    </a>
+
+                    <a href="https://trailblazer.me/id/pratikh" target="_blank">
+                        <img src={trailheadLogourl} class="Trailhead"/>
+
+                    </a>
+                </div>
+
+            </div>
+            <c-portfolio-user-details
+                record-id={recordId1}
+                object-api-name='Portfolio__c'
+                admin-rating={admin1}
+                devlopment-rating={devlopment1}></c-portfolio-user-details>
+            <c-portfolio-tab-set
+                record-id={recordId1}
+                object-api-name='Portfolio__c'></c-portfolio-tab-set>
+        </template>
+
+        <!-- <template if:true={showPortfolio1}>
+        <lightning-button label="Back"   variant="brand" onclick={handleBack}></lightning-button>
+        <div class="banner1">
+            
+        <img src={userLogourl} class="user-Logo"/>
+        <lightning-record-view-form
+        record-id={recordId1}
+        object-api-name='Portfolio__c'>    
+        <div class="name">
+    <lightning-output-field field-name="Name" variant="label-hidden"></lightning-output-field> </div>   
+    <lightning-output-field field-name="Designation__c" variant="label-hidden"></lightning-output-field> 
+    <lightning-output-field field-name="Company__c" variant="label-hidden"></lightning-output-field>
+    <lightning-output-field field-name="Location__c" variant="label-hidden"></lightning-output-field>
+
+
+       </lightning-record-view-form>
+       
+
+        <div>
+            <a href="https://www.linkedin.com/in/pratik-hingade-554b95216/" target="_blank">
+            <img src={linkedinLogourl} class="Linkedin"/>
+           
+           
+        </a>
+        
+            <a href="https://trailblazer.me/id/pratikh" target="_blank">
+            <img src={trailheadLogourl} class="Trailhead"/>
+           
+        </a>
+        </div>
+
+    </div>
+        <c-portfolio-user-details
+        record-id={recordId1}
+        object-api-name='Portfolio__c'
+        ></c-portfolio-user-details>
+
+        <c-portfolio-tab-set class="tabset"
+        record-id={recordId1}
+           object-api-name='Portfolio__c'
+        ></c-portfolio-tab-set>
+       
+   
+    </template> -->
+        <template if:true={showPortfolioDemo}>
+            
+            <div class="banner">
+                <!-- <lightning-record-view-form
+                record-id={recordId}
+         object-api-name={objectApiName}>
+         <lightning-output-field field-name="Name__c"></lightning-output-field>
+         <lightning-output-field field-name="Designation__c"></lightning-output-field>
+         <lightning-output-field field-name="Location__c"></lightning-output-field>
+         
+        </lightning-record-view-form> -->
+                <img src={userLogourl} class="user-Logo"/>
+                <lightning-record-view-form
+                    record-id={recordId1}
+                    object-api-name='Portfolio__c'>
+                    <div class="name">
+                        <lightning-output-field field-name="Name"
+                            variant="label-hidden"></lightning-output-field>
+                    </div>
+                    <lightning-output-field field-name="Designation__c"
+                        variant="label-hidden"></lightning-output-field>
+                    <lightning-output-field field-name="Company__c"
+                        variant="label-hidden"></lightning-output-field>
+                    <lightning-output-field field-name="Location__c"
+                        variant="label-hidden"></lightning-output-field>
+                </lightning-record-view-form>
+                <!-- <div class="name">Pratik Hingade</div>
+        <div class="designation">Junior Consaltant</div>
+        <div class="location">Bavdhan, Pune</div> -->
+                <div>
+                    <a
+                        href="https://www.linkedin.com/in/pratik-hingade-554b95216/"
+                        target="_blank">
+                        <img src={linkedinLogourl} class="Linkedin"/>
+
+
+                    </a>
+
+                    <a href="https://trailblazer.me/id/pratikh" target="_blank">
+                        <img src={trailheadLogourl} class="Trailhead"/>
+
+                    </a>
+                </div>
+
+            </div>
+
+            <c-portfolio-user-details
+                record-id={recordId1}
+                object-api-name='Portfolio__c'
+                admin-rating='80'
+                devlopment-rating='60'>
+            </c-portfolio-user-details>
+
+            <c-portfolio-tab-set
+                record-id={recordId1}
+                object-api-name='Portfolio__c'>
+            </c-portfolio-tab-set>
+            <lightning-button label="Go Back to Main Page" variant="error"
+                onclick={handleBack}></lightning-button>
+        </template>
+
+    </template>

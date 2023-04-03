@@ -1,0 +1,17 @@
+public class HttpCallOutDogApi {
+  // Pass in the endpoint to be used using the string url
+  public String getCalloutResponseContents(String url) {
+
+    // Instantiate a new Http object 
+    Http h = new Http();
+      string endpoint='https://dog.ceo/api/breeds/image/random';
+     // Instantiate a new HTTP request, specify the method (GET) as well as the endpoint
+    HttpRequest req = new HttpRequest();
+    req.setEndpoint(endpoint);
+    req.setMethod('GET');
+
+    // Send the request, and return a response
+    HttpResponse res = h.send(req);
+    return res.getBody();
+  }
+}

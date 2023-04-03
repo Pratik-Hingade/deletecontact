@@ -1,0 +1,31 @@
+<template>
+  
+        <!-- <template if:true={showContactpage}>  -->
+            <lightning-card title="Contact" icon-name="utility:adduser" > 
+                    <div>
+                <div class="slds-p-bottom_large slds-p-left_large" style="width:500px" >
+                    <lightning-record-edit-form object-api-name={ConObjectName} onsuccess={contacthandleSave}>
+                        <lightning-input-field field-name={ConAccountNameField} ></lightning-input-field>
+                        <lightning-input-field field-name={ConNameField} ></lightning-input-field>
+                        <lightning-input-field field-name={ConPhoneField}></lightning-input-field>
+                        <lightning-input-field field-name={ConEmailField}></lightning-input-field>  
+                        <lightning-button variant="brand"  type="submit" label="Save Contact" onclick={handleOpportunitydetails}  class="slds-m-left_x-small"></lightning-button>
+                    </lightning-record-edit-form> 
+                </div> 
+            </div>
+            </lightning-card>
+            <!-- </template> -->
+         
+
+                <!-- <template if:true={showAccountDetails}>
+                    <lightning-card title="My Account Record">
+                            <div class="slds-m-around_medium">
+                                <p>{name}</p>
+                                <p><lightning-formatted-phone value={phone}></lightning-formatted-phone></p>
+                               
+                            </div>
+                       
+                    </lightning-card>
+                </template> -->
+
+        </template>

@@ -1,0 +1,41 @@
+.header{
+        margin-top: -80px;
+}
+.product_cart{
+        width:1000px;
+        height:1000px;
+}
+.logo{
+        max-width: 170px;
+        max-height: 100px;
+        padding-left: 20px;
+        margin-left: 0px;
+        /* margin-right: 30px; */
+        align-items: center;
+        margin-top: 74px;
+        margin-bottom: -120px;
+    }
+    .cartlogo{
+        
+
+        max-width: 100px;
+        max-height: 67px;
+        margin-left: 1310px;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: -74px;
+        border-radius: 37%;
+    }
+    
+    .homelogo{
+        
+
+        max-width: 100px;
+        max-height: 67px;
+        margin-left: 1234px;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: -95px;
+        border-radius: 48%;
+    }
+    

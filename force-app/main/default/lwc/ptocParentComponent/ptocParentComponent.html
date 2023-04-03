@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Parent To Child Communication">
+       <b><p>Parent Component</p></b> 
+       <lightning-input label="First Name" value="Pratik" onchange={handlefname}></lightning-input>
+       <lightning-input label="Last Name" value="Hingade" onchange={handlelname} ></lightning-input>
+       <lightning-input label="Enter Progress Percentage"  value="0"  onchange={progresshandler}></lightning-input>
+       <c-ptoc-child-component
+       fname={namef}
+       lname={namel}
+       progress={progressValue}
+       ></c-ptoc-child-component>
+    </lightning-card>
+</template>

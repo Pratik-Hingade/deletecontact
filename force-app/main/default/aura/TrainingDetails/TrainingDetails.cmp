@@ -1,0 +1,96 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+   
+
+    <aura:attribute name="trainingList" type="Training__c[]"/>
+
+    <aura:attribute name="trainingType" type="string" default="Admin"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-p-around_small">
+
+       
+
+        <div class="slds-grid slds-wrap">
+
+            <table class="slds-table slds-table_cell-buffer slds-table_header-hidden slds-table_bordered">
+
+                <thead class="slds-assistive-text">
+
+                    <tr class="slds-line-height_reset">
+
+                        <th class="" scope="col">
+
+                            <div class="slds-truncate" title="Course Name">Course Name</div>
+
+                        </th>
+
+                        <th class="" scope="col">
+
+                            <div class="slds-truncate" title="Course Details">Course Details</div>
+
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <aura:iteration items="{!v.trainingList}" var="training">
+
+                       
+
+                        <tr class="slds-hint-parent">
+
+                            <td data-label="Account Name" style="height:50%;">
+
+                                <lightning:formattedRichText value="{!training.Course_Image__c}" style="height:50% Important;"/>
+
+                            </td>
+
+                            <td data-label="Training Name">
+
+                                <div class="slds-truncate" title="{!training.Course_Name__c}">
+
+                                    <span style="color:pink;weight:bold">Course Name: </span>{!training.Course_Name__c}
+
+                                </div>
+
+                               
+
+                                <lightning:badge label="{!training.Course_Type__c}"/>
+
+                                <lightning:badge label="{!training.Applicable_for__c}"/>
+
+                                <lightning:badge label="{!training.Course_Source__c}"/>
+
+                                <br/>
+
+                               
+
+                            </td>
+
+                            <td>
+
+                                <lightning:button variant="destructive" name="{!training.Course_link__c}" label="Start Learning" title="Success" onclick="{! c.doRedirect }"/>
+
+                            </td>
+
+                        </tr>
+
+                       
+
+                    </aura:iteration>
+
+                </tbody>
+
+            </table>
+
+           
+
+        </div>
+
+    </div>
+
+</aura:component>

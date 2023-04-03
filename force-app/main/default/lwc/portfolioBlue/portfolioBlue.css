@@ -1,0 +1,55 @@
+.banner{
+    background: #f6c403;
+    background: lightblue;
+
+    min-height: 300px;
+    text-align: center;
+    padding:32px 16px;
+}
+.user-Logo{
+    border-radius: 50%;
+    height: 140px;
+    width: 153px; 
+    height: 160px;
+    width: 160px;
+}
+.Linkedin{
+    height: 40px;
+    width: 40px;
+    margin: 16px 16px 0px 0px;
+}
+.Trailhead{
+    height: 40px;
+    width: 40px;
+    margin: 16px 16px 0px 0px;
+}
+.name{
+ font-size:18px;
+ font-weight:700;
+      color:#fff;
+}
+   c-portfolio-banner lightning-output-field a, c-portfolio-banner lightning-output-field .slds-form-element__static{ 
+        font-size: 20px;
+        font-weight: bolder;
+    }
+     c-portfolio-user-stats lightning-output-field .slds-form-element__static{
+ font-size:25px;
+          color:#f6c403;
+}
+    
+    c-portfolio-user-details-view-form lightning-output-field a, c-portfolio-user-details-view-form lightning-output-field .slds-form-element__static{ 
+        font-size:18px;
+      color:#f6c403;
+    }
+    c-portfolio-user-stats lightning-output-field .slds-form-element__label{ 
+     
+        font-size:18px;
+         font-weight:700;
+         color:#fff;
+    }	
+  
+    c-portfolio-tab-set ul.slds-tabs_scoped__nav{
+        background:#f6c403;
+        font-weight:700;
+        color:black;
+    }

@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-p-around_xx-large">
+    <lightning-card title="Personal-Details">
+    <b><h1>Name</h1></b>
+    <lightning-input type="text"  onchange={handleName}></lightning-input>
+    <template if:true={helloMethod}>
+        <p style="color: green;">Hurray!! you have typed correct Name</p>
+            </template>
+           <b><h1>City</h1></b> 
+    <lightning-input type="text"  onchange={handleCity}></lightning-input>
+    <template if:true={helloMethod1}>
+        <p style="color: green;">Hurray!! you have typed correct City</p>
+            </template>
+            <br/>
+   <b> <p>My Name is <i>-{name}</i>  & I leave in -<i>{city}</i></p></b>  
+            
+</lightning-card>
+  
+</div>
+
+</template>

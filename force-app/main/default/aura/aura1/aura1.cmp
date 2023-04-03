@@ -1,0 +1,9 @@
+<aura:component>
+<div>
+    <p class="p">This is Demo SlDs app </p>
+    <div class="slds-p-left_x-large">
+    <p class="h">This is standers style classes </p>  
+</div>
+    <p style="background-color: pink;;font-size:29px">This is custome style classse </p>
+</div>
+</aura:component>

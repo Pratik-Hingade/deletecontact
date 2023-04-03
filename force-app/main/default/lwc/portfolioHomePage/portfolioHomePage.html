@@ -1,0 +1,183 @@
+<template>
+    <!-- <lightning-card >  -->
+       
+        
+<template if:true={homePage}>
+    <div class="container"
+    style="background-image:https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2022/04/web-developer-portfolio.webp">
+    <p class="slds-p-left_xx-large slds-p-bottom_x-large" style="
+    font-size:60px;
+    color:#ffff;background-image:https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2021/08/how-to-make-an-online-portfolio.png">Free
+    Portfolio builder Site</p><br/><br/>
+    <div class="button">
+    <lightning-button class="slds-p-left_xx-large "
+    variant='success' label='Build Portfolio'
+    title='Create portfolio' onclick={handleOnClick}>
+</lightning-button>
+ 
+<lightning-button class="slds-p-left_xx-large "
+variant='success' label='Demo portfolio' title='Create
+portfolio' onclick={handleDemo}>
+</lightning-button>
+</div>
+<br/>
+<div style="clear: both">
+    <h1 class="slds-p-top_xx-large slds-p-left_xx-large "
+    style="font-size:23px;float: left; color:yellow"><lightning-icon
+                                icon-name="action:edit_relationship"
+                                alternative-text='alternativeText'
+                                title='title'>
+                            </lightning-icon> Easy To Create & customize.</h1>
+                            <h2 class=" slds-p-top_xx-large slds-p-right_xx-large"
+                            style="font-size:23px;float: right; color:yellow"><lightning-icon
+                            icon-name="action:freeze_user"
+                            alternative-text='alternativeText'
+                            title='title'>
+                        </lightning-icon>Beautifully Designed Templates.</h2>
+                    </div>
+                    <hr />
+                    <!-- <lightning-card> -->
+                       
+                    <p class="slds-p-left_xx-large" style="font-size:20px;
+                    color:white; margin: 110px 183px 0px 677px">Create a
+                    portfolio in 2 min that as unique and creative as you
+                    are. Impress potential clients and employers from the
+                    get-go with a stunning portfolio design made using
+                    free online portfolio builder. Easily
+                    create professional-looking portfolios that showcase
+                    your skills, qualifications, and best work Experience.</p>
+               
+                </div>  
+            <!-- </lightning-card> -->
+                <div class="step" style="background:lightblue">
+                    <div style="font-size:40px;margin: 0px 0px 28px 28px;">
+                        <b>
+                            <p>How to make a portfolio</p></b>
+                        </div>
+                        <div style="margin: 50px 0px 28px 28px; ">
+                            <h1 style=" font-size:25px;">1. Open our Site</h1> <br/>
+                            <p style=" font-size:18px;">Open brpwser and search
+                                <br/> <i style="color:blue"><u>“https://centelon/portfolio/s”
+                                </u></i> <br/> to build your portfolio.
+                            </p>
+                        </div>
+                        
+                        <div style="margin: -60px 0px 0px 850px">
+                            <h1 style=" font-size:25px;">2. Start with
+                                Information form</h1> <br/>
+                                <p style=" font-size:18px;">fill your
+                                    all
+                                    personal,Organization,Educational,work
+                                    experience & other Information and
+                                    save the form. </p>
+                                </div>
+
+                                    <div style="margin: 0px 0px 28px 28px; ">
+                                        <h1 style=" font-size:25px;">3. Save form</h1> <br/>
+                                            <p style=" font-size:18px;">fill all information and save the form. <br/> after click save button system show you notification,<br/> "information collected successfully" 
+                                                    </p>
+                                                </div>
+                                                <div style="margin: -60px 0px 0px 850px">
+                                                    <h1 style=" font-size:25px;">4. Ready to genarate Portfolio
+                                                    </h1> <br/>
+                                                    <p style=" font-size:18px;">Now system show you new button "Genarate Portfolio", Click that button. Now you ready with your portfolio. </p>
+                                                </div>
+                                            </div>
+                                            
+                                        </template>
+                                        <template if:true={portfolio}>
+                                            <!-- <div class="margin: 35px -34px -50px 14px;">   -->
+                                                <lightning-button-icon icon-name="action:back" variant='brand' alternative-text="back" title="back" onclick={handleback} ></lightning-button-icon>
+                                            <!-- </div> -->
+                                            <c-portfolio-banner>
+
+                                            </c-portfolio-banner>
+                                           
+                                        </template>
+                                        <template if:true={showPortfolioDemo}>
+                                         <!-- <div style="margin: 11px -34px -14px 14px;">  -->
+                                             
+                                            <lightning-button-icon icon-name="action:back" variant='brand' alternative-text="back" title="back" onclick={handleback} ></lightning-button-icon>
+                                        <!-- </div> -->
+
+                                            <div class="banner">
+                                                <!-- <lightning-record-view-form 
+                                                record-id={recordId}
+                                         object-api-name={objectApiName}>
+                                         <lightning-output-field field-name="Name__c"></lightning-output-field>
+                                         <lightning-output-field field-name="Designation__c"></lightning-output-field>
+                                         <lightning-output-field field-name="Location__c"></lightning-output-field>
+                                         
+                                        </lightning-record-view-form> -->
+                                                <img src={userLogourl} class="user-Logo"/>
+                                                <lightning-record-view-form
+                                                    record-id={recordId1}
+                                                    object-api-name='Portfolio__c'>
+                                                    <div class="name">
+                                                        <lightning-output-field field-name="Name"
+                                                            variant="label-hidden"></lightning-output-field>
+                                                    
+                                                    <lightning-output-field field-name="Designation__c"
+                                                        variant="label-hidden"></lightning-output-field>
+                                                    <lightning-output-field field-name="Company__c"
+                                                        variant="label-hidden"></lightning-output-field>
+                                                        <lightning-output-field field-name="Location__c"
+                                                        variant="label-hidden"></lightning-output-field>
+                                                    
+                                                    </div>
+                                                </lightning-record-view-form>
+                                                <!-- <div class="name">Pratik Hingade</div>
+                                        <div class="designation">Junior Consaltant</div>
+                                        <div class="location">Bavdhan, Pune</div> -->
+                                                <div>
+                                                    <a
+                                                        href="https://www.linkedin.com/in/pratik-hingade-554b95216/"
+                                                        target="_blank">
+                                                        <img src={linkedinLogourl} class="Linkedin"/>
+                                
+                                
+                                                    </a>
+                                
+                                                    <a href="https://trailblazer.me/id/pratikh" target="_blank">
+                                                        <img src={trailheadLogourl} class="Trailhead"/>
+                                
+                                                    </a>
+                                                </div>
+                                
+                                            </div>
+                                
+                                            <c-portfolio-user-details
+                                                record-id={recordId1}
+                                                object-api-name='Portfolio__c'
+                                                admin-rating='80'
+                                                devlopment-rating='60'>
+                                            </c-portfolio-user-details>
+                                
+                                            <c-portfolio-tab-set
+                                                record-id={recordId1}
+                                                object-api-name='Portfolio__c'>
+                                            </c-portfolio-tab-set>
+                                           
+                                           
+                                        </template>
+                                            <div class="footer">
+                                                <h1 style="background:#f6c403; padding:16px;text-align:center;">Built by Pr@t!k Hingade using Lwc.</h1>
+                                            </div>
+                                       
+                                    </template>
+
+<!-- 
+                                    <lightning-card>
+                                        <lightning-layout multiple-rows>
+                                           <lightning-layout-item size="12" 
+                                                small-device-size="9"
+                                                padding="around-small">
+                                                <p>Main Content Goes Here</p>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="12"
+                                                small-device-size="3"
+                                                padding="around-small">
+                                                <p>Sidebar Content Goes Here</p>
+                                            </lightning-layout-item>
+                                        </lightning-layout>
+                                      </lightning-card> -->

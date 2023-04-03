@@ -1,0 +1,21 @@
+<aura:component>
+<aura:attribute name="subject1" type="Integer"/>
+<aura:attribute name="subject2" type="Integer"/>
+<aura:attribute name="Result" type="Integer"/>
+<div>
+<lightning:input type="number" name="input1" label="1st Sub Marks" value="{!v.subject1}"/>
+<lightning:input type="number" name="input2" label="2nd Sub Marks" value="{!v.subject2}"/>
+
+
+<div class="slds-p-top_large">
+        <lightning:button variant="brand" label="Add"  onclick="{!c.handleClick}"></lightning:button>
+        <lightning:button variant="brand" label="Multi"  onclick="{!c.handleClick}"></lightning:button>
+        <lightning:button variant="brand" label="Sub"  onclick="{!c.handleClick}"></lightning:button>
+        <lightning:button variant="brand" label="Div"  onclick="{!c.handleClick}"></lightning:button>
+
+        <!-- <lightning:button variant="brand" label="Result" title="To Calculate Persentage" onclick="{!c.handleClick}"></lightning:button> -->
+        <lightning:input type="number" name="input3" label="CalculatedResult" value="{!v.Result}"/>
+       </div>
+
+</div>
+</aura:component>
